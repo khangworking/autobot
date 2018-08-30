@@ -8,7 +8,7 @@ def run():
   helper = Helper(keyboard.Controller(), keyboard.Key)
   helper.alt_tab_step(10)
   for i in range(randint(10, 20)):
-    mouse.move(randint(10, 100), randint(10, 100))
+    mouse.Controller().move(randint(10, 100), randint(10, 100))
 
 for i in range(1, 4):
   print(i)
