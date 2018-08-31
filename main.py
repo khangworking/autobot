@@ -7,6 +7,7 @@ def run():
   time.sleep(randint(30, 50))
   helper = Helper(keyboard.Controller(), keyboard.Key)
   helper.alt_tab_step(10)
+  helper.ctrl_pgDw_step(randint(5, 10))
   for i in range(randint(10, 20)):
     mouse.Controller().move(randint(10, 100), randint(10, 100))
 

@@ -26,3 +26,19 @@ class Helper:
       time.sleep(0.5)
       self.controller.press(self.key.tab)
     self.release_alt_tab()
+
+  def keep_ctrl_with(self, key):
+    self.controller.press(self.key.ctrl_l)
+    self.controller.press(key)
+
+  def release_ctrl_with(self, key):
+    self.controller.release(self.key.ctrl_l)
+    self.controller.release(key)
+
+  def ctrl_pgDw_step(self, step):
+    self.keep_ctrl_with(self.key.page_down)
+    for i in range(step):
+      self.controller.release(self.key.page_down)
+      time.sleep(0.12)
+      self.controller.press(self.key.page_down)
+    self.release_ctrl_with(self.key.page_down)
